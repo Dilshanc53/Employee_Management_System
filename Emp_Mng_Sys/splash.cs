@@ -16,5 +16,10 @@ namespace Emp_Mng_Sys
         {
             InitializeComponent();
         }
+
+        private void splash_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

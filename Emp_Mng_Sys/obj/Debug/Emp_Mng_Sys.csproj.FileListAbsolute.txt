@@ -10,3 +10,7 @@ D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.csproj.CoreCompileI
 D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.exe
 D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.pdb
 D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.home.resources
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.Employee.resources
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.login.resources
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\bin\Debug\MyEmployeeDb.mdf
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\bin\Debug\MyEmployeeDb_log.ldf

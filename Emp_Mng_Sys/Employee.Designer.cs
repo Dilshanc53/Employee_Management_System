@@ -46,18 +46,19 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.EmpDGV = new System.Windows.Forms.DataGridView();
-            this.myEmployeeDbDataSet = new Emp_Mng_Sys.MyEmployeeDbDataSet();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableTableAdapter = new Emp_Mng_Sys.MyEmployeeDbDataSetTableAdapters.TableTableAdapter();
             this.empIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empEduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empPosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myEmployeeDbDataSet = new Emp_Mng_Sys.MyEmployeeDbDataSet();
+            this.tableTableAdapter = new Emp_Mng_Sys.MyEmployeeDbDataSetTableAdapters.TableTableAdapter();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmpDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myEmployeeDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myEmployeeDbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -93,6 +94,7 @@
             // 
             // EmpPos
             // 
+            this.EmpPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EmpPos.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmpPos.FormattingEnabled = true;
             this.EmpPos.Items.AddRange(new object[] {
@@ -104,9 +106,11 @@
             this.EmpPos.Name = "EmpPos";
             this.EmpPos.Size = new System.Drawing.Size(191, 29);
             this.EmpPos.TabIndex = 19;
+            this.EmpPos.SelectedIndexChanged += new System.EventHandler(this.EmpPos_SelectedIndexChanged);
             // 
             // EmpEdu
             // 
+            this.EmpEdu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EmpEdu.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmpEdu.FormattingEnabled = true;
             this.EmpEdu.Items.AddRange(new object[] {
@@ -204,8 +208,9 @@
             this.button3.Padding = new System.Windows.Forms.Padding(1);
             this.button3.Size = new System.Drawing.Size(115, 47);
             this.button3.TabIndex = 5;
-            this.button3.Text = "logout";
+            this.button3.Text = "Edit";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -226,25 +231,26 @@
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.Magenta;
             this.button2.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(326, 383);
+            this.button2.Location = new System.Drawing.Point(335, 383);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(1);
             this.button2.Size = new System.Drawing.Size(115, 47);
             this.button2.TabIndex = 4;
-            this.button2.Text = "logout";
+            this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Magenta;
             this.button1.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(502, 383);
+            this.button1.Location = new System.Drawing.Point(488, 383);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(1);
             this.button1.Size = new System.Drawing.Size(115, 47);
             this.button1.TabIndex = 3;
-            this.button1.Text = "logout";
+            this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label4
@@ -283,26 +289,13 @@
             this.EmpDGV.TabIndex = 12;
             this.EmpDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // myEmployeeDbDataSet
-            // 
-            this.myEmployeeDbDataSet.DataSetName = "MyEmployeeDbDataSet";
-            this.myEmployeeDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.myEmployeeDbDataSet;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
-            // 
             // empIdDataGridViewTextBoxColumn
             // 
             this.empIdDataGridViewTextBoxColumn.DataPropertyName = "EmpId";
             this.empIdDataGridViewTextBoxColumn.HeaderText = "EmpId";
             this.empIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.empIdDataGridViewTextBoxColumn.Name = "empIdDataGridViewTextBoxColumn";
+            this.empIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.empIdDataGridViewTextBoxColumn.Width = 125;
             // 
             // empNameDataGridViewTextBoxColumn
@@ -311,6 +304,7 @@
             this.empNameDataGridViewTextBoxColumn.HeaderText = "EmpName";
             this.empNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.empNameDataGridViewTextBoxColumn.Name = "empNameDataGridViewTextBoxColumn";
+            this.empNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.empNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // empEduDataGridViewTextBoxColumn
@@ -319,6 +313,7 @@
             this.empEduDataGridViewTextBoxColumn.HeaderText = "EmpEdu";
             this.empEduDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.empEduDataGridViewTextBoxColumn.Name = "empEduDataGridViewTextBoxColumn";
+            this.empEduDataGridViewTextBoxColumn.ReadOnly = true;
             this.empEduDataGridViewTextBoxColumn.Width = 125;
             // 
             // empPosDataGridViewTextBoxColumn
@@ -327,7 +322,36 @@
             this.empPosDataGridViewTextBoxColumn.HeaderText = "EmpPos";
             this.empPosDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.empPosDataGridViewTextBoxColumn.Name = "empPosDataGridViewTextBoxColumn";
+            this.empPosDataGridViewTextBoxColumn.ReadOnly = true;
             this.empPosDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.myEmployeeDbDataSet;
+            // 
+            // myEmployeeDbDataSet
+            // 
+            this.myEmployeeDbDataSet.DataSetName = "MyEmployeeDbDataSet";
+            this.myEmployeeDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // button5
+            // 
+            this.button5.AutoSize = true;
+            this.button5.BackColor = System.Drawing.Color.Magenta;
+            this.button5.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(545, 97);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(1);
+            this.button5.Size = new System.Drawing.Size(71, 47);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Exit";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Employee
             // 
@@ -336,6 +360,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(1316, 723);
             this.Controls.Add(this.EmpDGV);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox5);
@@ -344,12 +369,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Employee_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmpDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myEmployeeDbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myEmployeeDbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empEduDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empPosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button5;
     }
 }

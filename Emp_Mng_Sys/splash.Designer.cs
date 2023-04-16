@@ -73,9 +73,9 @@
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.label2.Size = new System.Drawing.Size(154, 25);
+            this.label2.Size = new System.Drawing.Size(161, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Coded by RODERICK";
+            this.label2.Text = "CODED BY RODERICK";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splash

@@ -14,3 +14,9 @@ D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.Employee.resources
 D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.login.resources
 D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\bin\Debug\MyEmployeeDb.mdf
 D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\bin\Debug\MyEmployeeDb_log.ldf
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.viewEmp.resources
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.salary.resources
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\bin\Debug\Emp_Mng_Sys.exe.manifest
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\bin\Debug\Emp_Mng_Sys.application
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.exe.manifest
+D:\Projects\C#\Emp_Mng_Sys\Emp_Mng_Sys\obj\Debug\Emp_Mng_Sys.application

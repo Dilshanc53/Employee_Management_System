@@ -91,6 +91,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1311, 553);
             this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // EmpPos
             // 
@@ -99,8 +100,8 @@
             this.EmpPos.FormattingEnabled = true;
             this.EmpPos.Items.AddRange(new object[] {
             "Manager",
-            "Senior Developper",
-            "Junior Developper",
+            "Senior Developer",
+            "Junior Developer",
             "Accountant"});
             this.EmpPos.Location = new System.Drawing.Point(22, 264);
             this.EmpPos.Name = "EmpPos";
@@ -132,6 +133,7 @@
             this.EmpName.Name = "EmpName";
             this.EmpName.Size = new System.Drawing.Size(191, 28);
             this.EmpName.TabIndex = 17;
+            this.EmpName.TextChanged += new System.EventHandler(this.EmpName_TextChanged);
             // 
             // EmpId
             // 
@@ -252,6 +254,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -271,6 +274,9 @@
             // 
             this.EmpDGV.AllowUserToAddRows = false;
             this.EmpDGV.AllowUserToDeleteRows = false;
+            this.EmpDGV.AllowUserToOrderColumns = true;
+            this.EmpDGV.AllowUserToResizeColumns = false;
+            this.EmpDGV.AllowUserToResizeRows = false;
             this.EmpDGV.AutoGenerateColumns = false;
             this.EmpDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmpDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -280,14 +286,14 @@
             this.empPosDataGridViewTextBoxColumn});
             this.EmpDGV.DataSource = this.tableBindingSource;
             this.EmpDGV.Dock = System.Windows.Forms.DockStyle.Right;
+            this.EmpDGV.EnableHeadersVisualStyles = false;
             this.EmpDGV.Location = new System.Drawing.Point(622, 0);
             this.EmpDGV.Name = "EmpDGV";
-            this.EmpDGV.ReadOnly = true;
             this.EmpDGV.RowHeadersWidth = 51;
             this.EmpDGV.RowTemplate.Height = 24;
             this.EmpDGV.Size = new System.Drawing.Size(694, 723);
             this.EmpDGV.TabIndex = 12;
-            this.EmpDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.EmpDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpDGV_CellContentClick);
             // 
             // empIdDataGridViewTextBoxColumn
             // 

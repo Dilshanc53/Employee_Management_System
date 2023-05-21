@@ -67,16 +67,41 @@ namespace Emp_Mng_Sys
 
         }
 
-        private void EmpDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void EmpDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           /* foreach (DataGridViewColumn column in EmpDGV.Columns)
+            {
+                MessageBox.Show(column.Name);
+            }*/
             // Get the selected row
+
             DataGridViewRow row = EmpDGV.Rows[e.RowIndex];
 
             // Set the values of the TextBoxes to the values in the selected row
+           
+            EmpId.Text = row.Cells["empIdDataGridViewTextBoxColumn"].Value.ToString();
+            EmpName.Text = row.Cells["empNameDataGridViewTextBoxColumn"].Value.ToString();
+            EmpEdu.SelectedItem = row.Cells["empPosDataGridViewTextBoxColumn"].Value.ToString();
+            EmpPos.SelectedItem = row.Cells["empEduDataGridViewTextBoxColumn"].Value.ToString();
+            /*         EmpEdu.SelectedItem = EmpEdu.Items.Cast<string>().FirstOrDefault(item => item.Equals(row.Cells["empEduDataGridViewTextBoxColumn"].Value.ToString()));
+                     EmpPos.SelectedItem = EmpPos.Items.Cast<string>().FirstOrDefault(item => item.Equals(row.Cells["empPosDataGridViewTextBoxColumn"].Value.ToString()));
+             */
+
+            string empEduValue = row.Cells["empEduDataGridViewTextBoxColumn"].Value.ToString();
+            if (EmpEdu.Items.Contains(empEduValue))
+            {
+                EmpEdu.SelectedItem = empEduValue;
+            }
+
+            /*// Get the selected row
+            DataGridViewRow row = EmpDGV.Rows[e.RowIndex];
+
+            // Set the values of the TextBoxes to the values in the selected row
+            EmpName.Text = EmpDGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
             EmpId.Text = row.Cells["EmpId"].Value.ToString();
             EmpName.Text = row.Cells["EmpName"].Value.ToString();
             EmpEdu.SelectedItem = row.Cells["EmpEdu"].Value.ToString();
-            EmpPos.SelectedItem = row.Cells["EmpPos"].Value.ToString();
+            EmpPos.SelectedItem = row.Cells["EmpPos"].Value.ToString();*/
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -89,10 +114,22 @@ namespace Emp_Mng_Sys
             {
                 try
                 {
-                    con.Open();
-                    //String query = "UPDATE [Table] set EmpId = '"+EmpId.Text+"', EmpName = '"+EmpName.Text+"',EmpEdu =      ";
-                    String query = $"UpDATE [Table] set EmpId = '{EmpId.Text}', EmpNmae = EmpName = '{EmpName.Text}', EmpPos = '{EmpPos.Text}', EmpEdu = '{EmpEdu.Text}'"; 
-                    con.Close();
+                    {
+                        con.Open();
+                        String query = $"UPDATE [Table] SET EmpName = '{EmpName.Text}', EmpPos = '{EmpPos.Text}', EmpEdu = '{EmpEdu.Text}' WHERE EmpId = '{EmpId.Text}'";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        int result = cmd.ExecuteNonQuery();
+                        if (result == 0)
+                        {
+                            MessageBox.Show("Employee with entered EmpId not found in the table");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Employee updated successfully");
+                        }
+                        con.Close();
+                        populate();
+                    }
 
                 }
                 catch (Exception Ex)
@@ -171,6 +208,25 @@ namespace Emp_Mng_Sys
                     g.FillRectangle(brush, this.ClientRectangle);
                 }*/
             
+
+        }
+
+        
+
+        private void EmpName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            home home = new home();
+            home.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
